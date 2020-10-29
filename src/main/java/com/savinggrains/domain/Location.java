@@ -41,11 +41,7 @@ public class Location implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private Country country;
-
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Person person;
+    private Region region;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -121,30 +117,17 @@ public class Location implements Serializable {
         this.coordinates = coordinates;
     }
 
-    public Country getCountry() {
-        return country;
+    public Region getRegion() {
+        return region;
     }
 
-    public Location country(Country country) {
-        this.country = country;
+    public Location region(Region region) {
+        this.region = region;
         return this;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public Location person(Person person) {
-        this.person = person;
-        return this;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setRegion(Region region) {
+        this.region = region;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

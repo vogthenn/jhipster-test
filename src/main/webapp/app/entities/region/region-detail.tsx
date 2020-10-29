@@ -31,6 +31,10 @@ export const RegionDetail = (props: IRegionDetailProps) => {
             </span>
           </dt>
           <dd>{regionEntity.regionName}</dd>
+          <dt>
+            <Translate contentKey="jhipstertestApp.region.country">Country</Translate>
+          </dt>
+          <dd>{regionEntity.country ? regionEntity.country.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/region" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

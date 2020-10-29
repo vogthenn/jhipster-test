@@ -8,6 +8,7 @@ export default class RegionUpdatePage {
   saveButton: ElementFinder = element(by.id('save-entity'));
   cancelButton: ElementFinder = element(by.id('cancel-save'));
   regionNameInput: ElementFinder = element(by.css('input#region-regionName'));
+  countrySelect: ElementFinder = element(by.css('select#region-country'));
 
   getPageTitle() {
     return this.pageTitle;
@@ -19,6 +20,22 @@ export default class RegionUpdatePage {
 
   async getRegionNameInput() {
     return this.regionNameInput.getAttribute('value');
+  }
+
+  async countrySelectLastOption() {
+    await this.countrySelect.all(by.tagName('option')).last().click();
+  }
+
+  async countrySelectOption(option) {
+    await this.countrySelect.sendKeys(option);
+  }
+
+  getCountrySelect() {
+    return this.countrySelect;
+  }
+
+  async getCountrySelectedOption() {
+    return this.countrySelect.element(by.css('option:checked')).getText();
   }
 
   async save() {
@@ -37,6 +54,7 @@ export default class RegionUpdatePage {
     await waitUntilDisplayed(this.saveButton);
     await this.setRegionNameInput('regionName');
     expect(await this.getRegionNameInput()).to.match(/regionName/);
+    await this.countrySelectLastOption();
     await this.save();
     await waitUntilHidden(this.saveButton);
     expect(await isVisible(this.saveButton)).to.be.false;

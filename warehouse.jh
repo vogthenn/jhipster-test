@@ -65,7 +65,7 @@ enum Language {
 }
 
 relationship OneToOne {
-	Country{region} to Region
+	Region{country} to Country
 }
 
 relationship OneToOne {
@@ -73,11 +73,7 @@ relationship OneToOne {
 }
 
 relationship OneToOne {
-	Location{country} to Country
-}
-
-relationship OneToOne {
-	Location to Person
+	Location{region} to Region
 }
 
 // relationship ManyToMany {
@@ -102,10 +98,6 @@ relationship ManyToOne {
 
 relationship OneToOne {
 	PurchaseOrder{location} to Location
-}
-
-relationship OneToOne {
-	Grain{name} to Bag 
 }
 
 

@@ -25,17 +25,9 @@
   "relationships": [
     {
       "relationshipType": "one-to-one",
-      "otherEntityName": "country",
+      "otherEntityName": "region",
       "otherEntityRelationshipName": "location",
-      "relationshipName": "country",
-      "otherEntityField": "id",
-      "ownerSide": true
-    },
-    {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "person",
-      "otherEntityRelationshipName": "location",
-      "relationshipName": "person",
+      "relationshipName": "region",
       "otherEntityField": "id",
       "ownerSide": true
     }

@@ -6,16 +6,7 @@
       "fieldType": "String"
     }
   ],
-  "relationships": [
-    {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "region",
-      "otherEntityRelationshipName": "country",
-      "relationshipName": "region",
-      "otherEntityField": "id",
-      "ownerSide": true
-    }
-  ],
+  "relationships": [],
   "changelogDate": "20201029110804",
   "entityTableName": "country",
   "dto": "no",

@@ -1,5 +1,4 @@
-import { ICountry } from 'app/shared/model/country.model';
-import { IPerson } from 'app/shared/model/person.model';
+import { IRegion } from 'app/shared/model/region.model';
 
 export interface ILocation {
   id?: number;
@@ -8,8 +7,7 @@ export interface ILocation {
   city?: string;
   stateProvince?: string;
   coordinates?: string;
-  country?: ICountry;
-  person?: IPerson;
+  region?: IRegion;
 }
 
 export const defaultValue: Readonly<ILocation> = {};

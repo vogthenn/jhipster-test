@@ -7,10 +7,8 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
-import { ICountry } from 'app/shared/model/country.model';
-import { getEntities as getCountries } from 'app/entities/country/country.reducer';
-import { IPerson } from 'app/shared/model/person.model';
-import { getEntities as getPeople } from 'app/entities/person/person.reducer';
+import { IRegion } from 'app/shared/model/region.model';
+import { getEntities as getRegions } from 'app/entities/region/region.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './location.reducer';
 import { ILocation } from 'app/shared/model/location.model';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
@@ -19,11 +17,10 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface ILocationUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const LocationUpdate = (props: ILocationUpdateProps) => {
-  const [countryId, setCountryId] = useState('0');
-  const [personId, setPersonId] = useState('0');
+  const [regionId, setRegionId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { locationEntity, countries, people, loading, updating } = props;
+  const { locationEntity, regions, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/location');
@@ -36,8 +33,7 @@ export const LocationUpdate = (props: ILocationUpdateProps) => {
       props.getEntity(props.match.params.id);
     }
 
-    props.getCountries();
-    props.getPeople();
+    props.getRegions();
   }, []);
 
   useEffect(() => {
@@ -115,28 +111,13 @@ export const LocationUpdate = (props: ILocationUpdateProps) => {
                 <AvField id="location-coordinates" type="text" name="coordinates" />
               </AvGroup>
               <AvGroup>
-                <Label for="location-country">
-                  <Translate contentKey="jhipstertestApp.location.country">Country</Translate>
+                <Label for="location-region">
+                  <Translate contentKey="jhipstertestApp.location.region">Region</Translate>
                 </Label>
-                <AvInput id="location-country" type="select" className="form-control" name="country.id">
+                <AvInput id="location-region" type="select" className="form-control" name="region.id">
                   <option value="" key="0" />
-                  {countries
-                    ? countries.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
-                <Label for="location-person">
-                  <Translate contentKey="jhipstertestApp.location.person">Person</Translate>
-                </Label>
-                <AvInput id="location-person" type="select" className="form-control" name="person.id">
-                  <option value="" key="0" />
-                  {people
-                    ? people.map(otherEntity => (
+                  {regions
+                    ? regions.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
                           {otherEntity.id}
                         </option>
@@ -166,8 +147,7 @@ export const LocationUpdate = (props: ILocationUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
-  countries: storeState.country.entities,
-  people: storeState.person.entities,
+  regions: storeState.region.entities,
   locationEntity: storeState.location.entity,
   loading: storeState.location.loading,
   updating: storeState.location.updating,
@@ -175,8 +155,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  getCountries,
-  getPeople,
+  getRegions,
   getEntity,
   updateEntity,
   createEntity,

@@ -4,15 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
     <!--
-        Added the constraints for entity Grain.
+        Added the constraints for entity Region.
     -->
-    <changeSet id="20201029111504-2" author="jhipster">
+    <changeSet id="20201029110704-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="content_type_id"
-                                 baseTableName="grain"
-                                 constraintName="fk_grain_content_type_id"
+        <addForeignKeyConstraint baseColumnNames="country_id"
+                                 baseTableName="region"
+                                 constraintName="fk_region_country_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="bag"/>
+                                 referencedTableName="country"/>
 
     </changeSet>
 </databaseChangeLog>

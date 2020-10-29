@@ -18,7 +18,6 @@ export interface IPersonUpdateProps extends StateProps, DispatchProps, RouteComp
 
 export const PersonUpdate = (props: IPersonUpdateProps) => {
   const [locationId, setLocationId] = useState('0');
-  const [locationId, setLocationId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
   const { personEntity, locations, loading, updating } = props;

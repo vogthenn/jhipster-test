@@ -11,7 +11,6 @@ export interface IPerson {
   salary?: number;
   commissionPct?: number;
   location?: ILocation;
-  location?: ILocation;
 }
 
 export const defaultValue: Readonly<IPerson> = {};

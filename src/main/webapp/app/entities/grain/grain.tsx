@@ -42,9 +42,6 @@ export const Grain = (props: IGrainProps) => {
                 <th>
                   <Translate contentKey="jhipstertestApp.grain.contentType">Content Type</Translate>
                 </th>
-                <th>
-                  <Translate contentKey="jhipstertestApp.grain.name">Name</Translate>
-                </th>
                 <th />
               </tr>
             </thead>
@@ -58,7 +55,6 @@ export const Grain = (props: IGrainProps) => {
                   </td>
                   <td>{grain.name}</td>
                   <td>{grain.contentType ? <Link to={`bag/${grain.contentType.id}`}>{grain.contentType.id}</Link> : ''}</td>
-                  <td>{grain.name ? <Link to={`bag/${grain.name.id}`}>{grain.name.id}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${grain.id}`} color="info" size="sm">

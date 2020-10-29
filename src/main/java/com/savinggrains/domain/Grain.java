@@ -29,10 +29,6 @@ public class Grain implements Serializable {
     @JoinColumn(unique = true)
     private Bag contentType;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Bag name;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -66,19 +62,6 @@ public class Grain implements Serializable {
 
     public void setContentType(Bag bag) {
         this.contentType = bag;
-    }
-
-    public Bag getName() {
-        return name;
-    }
-
-    public Grain name(Bag bag) {
-        this.name = bag;
-        return this;
-    }
-
-    public void setName(Bag bag) {
-        this.name = bag;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

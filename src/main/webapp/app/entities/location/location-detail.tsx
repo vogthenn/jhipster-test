@@ -56,13 +56,9 @@ export const LocationDetail = (props: ILocationDetailProps) => {
           </dt>
           <dd>{locationEntity.coordinates}</dd>
           <dt>
-            <Translate contentKey="jhipstertestApp.location.country">Country</Translate>
+            <Translate contentKey="jhipstertestApp.location.region">Region</Translate>
           </dt>
-          <dd>{locationEntity.country ? locationEntity.country.id : ''}</dd>
-          <dt>
-            <Translate contentKey="jhipstertestApp.location.person">Person</Translate>
-          </dt>
-          <dd>{locationEntity.person ? locationEntity.person.id : ''}</dd>
+          <dd>{locationEntity.region ? locationEntity.region.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/location" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

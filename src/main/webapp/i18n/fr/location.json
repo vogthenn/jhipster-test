@@ -21,8 +21,7 @@
       "city": "City",
       "stateProvince": "State Province",
       "coordinates": "Coordinates",
-      "country": "Country",
-      "person": "Person"
+      "region": "Region"
     }
   }
 }
