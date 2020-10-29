@@ -18,7 +18,6 @@ export interface IGrainUpdateProps extends StateProps, DispatchProps, RouteCompo
 
 export const GrainUpdate = (props: IGrainUpdateProps) => {
   const [contentTypeId, setContentTypeId] = useState('0');
-  const [nameId, setNameId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
   const { grainEntity, bags, loading, updating } = props;
@@ -92,21 +91,6 @@ export const GrainUpdate = (props: IGrainUpdateProps) => {
                   <Translate contentKey="jhipstertestApp.grain.contentType">Content Type</Translate>
                 </Label>
                 <AvInput id="grain-contentType" type="select" className="form-control" name="contentType.id">
-                  <option value="" key="0" />
-                  {bags
-                    ? bags.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
-                <Label for="grain-name">
-                  <Translate contentKey="jhipstertestApp.grain.name">Name</Translate>
-                </Label>
-                <AvInput id="grain-name" type="select" className="form-control" name="name.id">
                   <option value="" key="0" />
                   {bags
                     ? bags.map(otherEntity => (

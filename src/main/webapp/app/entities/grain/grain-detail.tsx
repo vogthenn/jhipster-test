@@ -35,10 +35,6 @@ export const GrainDetail = (props: IGrainDetailProps) => {
             <Translate contentKey="jhipstertestApp.grain.contentType">Content Type</Translate>
           </dt>
           <dd>{grainEntity.contentType ? grainEntity.contentType.id : ''}</dd>
-          <dt>
-            <Translate contentKey="jhipstertestApp.grain.name">Name</Translate>
-          </dt>
-          <dd>{grainEntity.name ? grainEntity.name.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/grain" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

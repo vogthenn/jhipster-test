@@ -7,8 +7,6 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
-import { IRegion } from 'app/shared/model/region.model';
-import { getEntities as getRegions } from 'app/entities/region/region.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './country.reducer';
 import { ICountry } from 'app/shared/model/country.model';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
@@ -17,10 +15,9 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface ICountryUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const CountryUpdate = (props: ICountryUpdateProps) => {
-  const [regionId, setRegionId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { countryEntity, regions, loading, updating } = props;
+  const { countryEntity, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/country');
@@ -32,8 +29,6 @@ export const CountryUpdate = (props: ICountryUpdateProps) => {
     } else {
       props.getEntity(props.match.params.id);
     }
-
-    props.getRegions();
   }, []);
 
   useEffect(() => {
@@ -86,21 +81,6 @@ export const CountryUpdate = (props: ICountryUpdateProps) => {
                 </Label>
                 <AvField id="country-countryName" type="text" name="countryName" />
               </AvGroup>
-              <AvGroup>
-                <Label for="country-region">
-                  <Translate contentKey="jhipstertestApp.country.region">Region</Translate>
-                </Label>
-                <AvInput id="country-region" type="select" className="form-control" name="region.id">
-                  <option value="" key="0" />
-                  {regions
-                    ? regions.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
               <Button tag={Link} id="cancel-save" to="/country" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
@@ -123,7 +103,6 @@ export const CountryUpdate = (props: ICountryUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
-  regions: storeState.region.entities,
   countryEntity: storeState.country.entity,
   loading: storeState.country.loading,
   updating: storeState.country.updating,
@@ -131,7 +110,6 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  getRegions,
   getEntity,
   updateEntity,
   createEntity,

@@ -12,8 +12,7 @@ export default class LocationUpdatePage {
   cityInput: ElementFinder = element(by.css('input#location-city'));
   stateProvinceInput: ElementFinder = element(by.css('input#location-stateProvince'));
   coordinatesInput: ElementFinder = element(by.css('input#location-coordinates'));
-  countrySelect: ElementFinder = element(by.css('select#location-country'));
-  personSelect: ElementFinder = element(by.css('select#location-person'));
+  regionSelect: ElementFinder = element(by.css('select#location-region'));
 
   getPageTitle() {
     return this.pageTitle;
@@ -59,36 +58,20 @@ export default class LocationUpdatePage {
     return this.coordinatesInput.getAttribute('value');
   }
 
-  async countrySelectLastOption() {
-    await this.countrySelect.all(by.tagName('option')).last().click();
+  async regionSelectLastOption() {
+    await this.regionSelect.all(by.tagName('option')).last().click();
   }
 
-  async countrySelectOption(option) {
-    await this.countrySelect.sendKeys(option);
+  async regionSelectOption(option) {
+    await this.regionSelect.sendKeys(option);
   }
 
-  getCountrySelect() {
-    return this.countrySelect;
+  getRegionSelect() {
+    return this.regionSelect;
   }
 
-  async getCountrySelectedOption() {
-    return this.countrySelect.element(by.css('option:checked')).getText();
-  }
-
-  async personSelectLastOption() {
-    await this.personSelect.all(by.tagName('option')).last().click();
-  }
-
-  async personSelectOption(option) {
-    await this.personSelect.sendKeys(option);
-  }
-
-  getPersonSelect() {
-    return this.personSelect;
-  }
-
-  async getPersonSelectedOption() {
-    return this.personSelect.element(by.css('option:checked')).getText();
+  async getRegionSelectedOption() {
+    return this.regionSelect.element(by.css('option:checked')).getText();
   }
 
   async save() {
@@ -119,8 +102,7 @@ export default class LocationUpdatePage {
     await waitUntilDisplayed(this.saveButton);
     await this.setCoordinatesInput('coordinates');
     expect(await this.getCoordinatesInput()).to.match(/coordinates/);
-    await this.countrySelectLastOption();
-    await this.personSelectLastOption();
+    await this.regionSelectLastOption();
     await this.save();
     await waitUntilHidden(this.saveButton);
     expect(await isVisible(this.saveButton)).to.be.false;

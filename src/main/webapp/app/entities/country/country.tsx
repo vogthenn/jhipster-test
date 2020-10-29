@@ -39,9 +39,6 @@ export const Country = (props: ICountryProps) => {
                 <th>
                   <Translate contentKey="jhipstertestApp.country.countryName">Country Name</Translate>
                 </th>
-                <th>
-                  <Translate contentKey="jhipstertestApp.country.region">Region</Translate>
-                </th>
                 <th />
               </tr>
             </thead>
@@ -54,7 +51,6 @@ export const Country = (props: ICountryProps) => {
                     </Button>
                   </td>
                   <td>{country.countryName}</td>
-                  <td>{country.region ? <Link to={`region/${country.region.id}`}>{country.region.id}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${country.id}`} color="info" size="sm">

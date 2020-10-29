@@ -52,10 +52,7 @@ export const Location = (props: ILocationProps) => {
                   <Translate contentKey="jhipstertestApp.location.coordinates">Coordinates</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="jhipstertestApp.location.country">Country</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="jhipstertestApp.location.person">Person</Translate>
+                  <Translate contentKey="jhipstertestApp.location.region">Region</Translate>
                 </th>
                 <th />
               </tr>
@@ -73,8 +70,7 @@ export const Location = (props: ILocationProps) => {
                   <td>{location.city}</td>
                   <td>{location.stateProvince}</td>
                   <td>{location.coordinates}</td>
-                  <td>{location.country ? <Link to={`country/${location.country.id}`}>{location.country.id}</Link> : ''}</td>
-                  <td>{location.person ? <Link to={`person/${location.person.id}`}>{location.person.id}</Link> : ''}</td>
+                  <td>{location.region ? <Link to={`region/${location.region.id}`}>{location.region.id}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${location.id}`} color="info" size="sm">

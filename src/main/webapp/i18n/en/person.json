@@ -24,7 +24,6 @@
       "salary": "Salary",
       "commissionPct": "Commission Pct",
       "location": "Location",
-      "location": "Location",
       "help": {
         "firstName": "The firstname attribute."
       }

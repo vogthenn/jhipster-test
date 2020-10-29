@@ -14,14 +14,6 @@
       "relationshipName": "contentType",
       "otherEntityField": "id",
       "ownerSide": true
-    },
-    {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "bag",
-      "otherEntityRelationshipName": "grain",
-      "relationshipName": "name",
-      "otherEntityField": "id",
-      "ownerSide": true
     }
   ],
   "changelogDate": "20201029111504",

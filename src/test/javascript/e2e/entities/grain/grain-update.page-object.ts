@@ -9,7 +9,6 @@ export default class GrainUpdatePage {
   cancelButton: ElementFinder = element(by.id('cancel-save'));
   nameInput: ElementFinder = element(by.css('input#grain-name'));
   contentTypeSelect: ElementFinder = element(by.css('select#grain-contentType'));
-  nameSelect: ElementFinder = element(by.css('select#grain-name'));
 
   getPageTitle() {
     return this.pageTitle;
@@ -39,22 +38,6 @@ export default class GrainUpdatePage {
     return this.contentTypeSelect.element(by.css('option:checked')).getText();
   }
 
-  async nameSelectLastOption() {
-    await this.nameSelect.all(by.tagName('option')).last().click();
-  }
-
-  async nameSelectOption(option) {
-    await this.nameSelect.sendKeys(option);
-  }
-
-  getNameSelect() {
-    return this.nameSelect;
-  }
-
-  async getNameSelectedOption() {
-    return this.nameSelect.element(by.css('option:checked')).getText();
-  }
-
   async save() {
     await this.saveButton.click();
   }
@@ -72,7 +55,6 @@ export default class GrainUpdatePage {
     await this.setNameInput('name');
     expect(await this.getNameInput()).to.match(/name/);
     await this.contentTypeSelectLastOption();
-    await this.nameSelectLastOption();
     await this.save();
     await waitUntilHidden(this.saveButton);
     expect(await isVisible(this.saveButton)).to.be.false;

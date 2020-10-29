@@ -30,11 +30,8 @@
             <column name="coordinates" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="country_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_location_country_id" />
-            </column>
-            <column name="person_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_location_person_id" />
+            <column name="region_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_location_region_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>

@@ -1,6 +1,5 @@
 package com.savinggrains.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.Cache;
@@ -54,10 +53,6 @@ public class Person implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private Location location;
-
-    @OneToOne(mappedBy = "person")
-    @JsonIgnore
     private Location location;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -158,19 +153,6 @@ public class Person implements Serializable {
 
     public void setCommissionPct(Long commissionPct) {
         this.commissionPct = commissionPct;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public Person location(Location location) {
-        this.location = location;
-        return this;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
     }
 
     public Location getLocation() {
