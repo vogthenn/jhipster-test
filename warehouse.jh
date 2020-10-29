@@ -85,7 +85,7 @@ relationship OneToOne {
 // }
 
 relationship OneToOne {
-	Location{location} to Person
+	Person{location} to Location
 }
 
 relationship OneToOne {
@@ -93,7 +93,7 @@ relationship OneToOne {
 }
 
 relationship OneToOne {
-	Location{location} to Transaction
+	Transaction{location} to Location
 }
 
 relationship ManyToOne {
@@ -101,7 +101,7 @@ relationship ManyToOne {
 }
 
 relationship OneToOne {
-	Location{location} to PurchaseOrder
+	PurchaseOrder{location} to Location
 }
 
 relationship OneToOne {
