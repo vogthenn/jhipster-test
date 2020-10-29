@@ -24,7 +24,12 @@ export const TransactionDetail = (props: ITransactionDetailProps) => {
         <h2>
           <Translate contentKey="jhipstertestApp.transaction.detail.title">Transaction</Translate> [<b>{transactionEntity.id}</b>]
         </h2>
-        <dl className="jh-entity-details"></dl>
+        <dl className="jh-entity-details">
+          <dt>
+            <Translate contentKey="jhipstertestApp.transaction.location">Location</Translate>
+          </dt>
+          <dd>{transactionEntity.location ? transactionEntity.location.id : ''}</dd>
+        </dl>
         <Button tag={Link} to="/transaction" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}
           <span className="d-none d-md-inline">

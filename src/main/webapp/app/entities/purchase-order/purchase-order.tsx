@@ -42,6 +42,9 @@ export const PurchaseOrder = (props: IPurchaseOrderProps) => {
                 <th>
                   <Translate contentKey="jhipstertestApp.purchaseOrder.desiredQuality">Desired Quality</Translate>
                 </th>
+                <th>
+                  <Translate contentKey="jhipstertestApp.purchaseOrder.location">Location</Translate>
+                </th>
                 <th />
               </tr>
             </thead>
@@ -55,6 +58,9 @@ export const PurchaseOrder = (props: IPurchaseOrderProps) => {
                   </td>
                   <td>{purchaseOrder.desiredQuantity}</td>
                   <td>{purchaseOrder.desiredQuality}</td>
+                  <td>
+                    {purchaseOrder.location ? <Link to={`location/${purchaseOrder.location.id}`}>{purchaseOrder.location.id}</Link> : ''}
+                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${purchaseOrder.id}`} color="info" size="sm">

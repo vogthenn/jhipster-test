@@ -1,7 +1,16 @@
 {
   "name": "Transaction",
   "fields": [],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "transaction",
+      "relationshipName": "location",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
   "changelogDate": "20201029111304",
   "entityTableName": "transaction",
   "dto": "no",

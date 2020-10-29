@@ -102,6 +102,9 @@ export const Transaction = (props: ITransactionProps) => {
                   <th className="hand" onClick={sort('id')}>
                     <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
+                  <th>
+                    <Translate contentKey="jhipstertestApp.transaction.location">Location</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
                   <th />
                 </tr>
               </thead>
@@ -113,6 +116,7 @@ export const Transaction = (props: ITransactionProps) => {
                         {transaction.id}
                       </Button>
                     </td>
+                    <td>{transaction.location ? <Link to={`location/${transaction.location.id}`}>{transaction.location.id}</Link> : ''}</td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${transaction.id}`} color="info" size="sm">

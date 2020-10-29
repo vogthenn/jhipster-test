@@ -70,6 +70,10 @@ export const PersonDetail = (props: IPersonDetailProps) => {
             </span>
           </dt>
           <dd>{personEntity.commissionPct}</dd>
+          <dt>
+            <Translate contentKey="jhipstertestApp.person.location">Location</Translate>
+          </dt>
+          <dd>{personEntity.location ? personEntity.location.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/person" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -18,6 +18,7 @@ export interface IPersonUpdateProps extends StateProps, DispatchProps, RouteComp
 
 export const PersonUpdate = (props: IPersonUpdateProps) => {
   const [locationId, setLocationId] = useState('0');
+  const [locationId, setLocationId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
   const { personEntity, locations, loading, updating } = props;
@@ -131,6 +132,21 @@ export const PersonUpdate = (props: IPersonUpdateProps) => {
                   <Translate contentKey="jhipstertestApp.person.commissionPct">Commission Pct</Translate>
                 </Label>
                 <AvField id="person-commissionPct" type="string" className="form-control" name="commissionPct" />
+              </AvGroup>
+              <AvGroup>
+                <Label for="person-location">
+                  <Translate contentKey="jhipstertestApp.person.location">Location</Translate>
+                </Label>
+                <AvInput id="person-location" type="select" className="form-control" name="location.id">
+                  <option value="" key="0" />
+                  {locations
+                    ? locations.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.id}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
               </AvGroup>
               <Button tag={Link} id="cancel-save" to="/person" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />

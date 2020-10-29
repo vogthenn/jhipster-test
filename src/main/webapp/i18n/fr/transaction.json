@@ -15,7 +15,8 @@
       },
       "detail": {
         "title": "Transaction"
-      }
+      },
+      "location": "Location"
     }
   }
 }

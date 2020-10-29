@@ -14,9 +14,6 @@ export default class LocationUpdatePage {
   coordinatesInput: ElementFinder = element(by.css('input#location-coordinates'));
   countrySelect: ElementFinder = element(by.css('select#location-country'));
   personSelect: ElementFinder = element(by.css('select#location-person'));
-  locationSelect: ElementFinder = element(by.css('select#location-location'));
-  locationSelect: ElementFinder = element(by.css('select#location-location'));
-  locationSelect: ElementFinder = element(by.css('select#location-location'));
 
   getPageTitle() {
     return this.pageTitle;
@@ -94,54 +91,6 @@ export default class LocationUpdatePage {
     return this.personSelect.element(by.css('option:checked')).getText();
   }
 
-  async locationSelectLastOption() {
-    await this.locationSelect.all(by.tagName('option')).last().click();
-  }
-
-  async locationSelectOption(option) {
-    await this.locationSelect.sendKeys(option);
-  }
-
-  getLocationSelect() {
-    return this.locationSelect;
-  }
-
-  async getLocationSelectedOption() {
-    return this.locationSelect.element(by.css('option:checked')).getText();
-  }
-
-  async locationSelectLastOption() {
-    await this.locationSelect.all(by.tagName('option')).last().click();
-  }
-
-  async locationSelectOption(option) {
-    await this.locationSelect.sendKeys(option);
-  }
-
-  getLocationSelect() {
-    return this.locationSelect;
-  }
-
-  async getLocationSelectedOption() {
-    return this.locationSelect.element(by.css('option:checked')).getText();
-  }
-
-  async locationSelectLastOption() {
-    await this.locationSelect.all(by.tagName('option')).last().click();
-  }
-
-  async locationSelectOption(option) {
-    await this.locationSelect.sendKeys(option);
-  }
-
-  getLocationSelect() {
-    return this.locationSelect;
-  }
-
-  async getLocationSelectedOption() {
-    return this.locationSelect.element(by.css('option:checked')).getText();
-  }
-
   async save() {
     await this.saveButton.click();
   }
@@ -172,9 +121,6 @@ export default class LocationUpdatePage {
     expect(await this.getCoordinatesInput()).to.match(/coordinates/);
     await this.countrySelectLastOption();
     await this.personSelectLastOption();
-    await this.locationSelectLastOption();
-    await this.locationSelectLastOption();
-    await this.locationSelectLastOption();
     await this.save();
     await waitUntilHidden(this.saveButton);
     expect(await isVisible(this.saveButton)).to.be.false;
