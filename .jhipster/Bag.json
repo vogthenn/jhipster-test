@@ -1,0 +1,30 @@
+{
+  "name": "Bag",
+  "fields": [
+    {
+      "fieldName": "quality",
+      "fieldType": "QualityGrade",
+      "fieldValues": "GOOD,OK,SOSO,BAD"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "transaction",
+      "otherEntityRelationshipName": "bag",
+      "relationshipName": "bags",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201029111404",
+  "entityTableName": "bag",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,23 @@
+{
+  "jhipstertestApp": {
+    "bag": {
+      "home": {
+        "title": "Bags",
+        "createLabel": "Créer un nouveau Bag",
+        "createOrEditLabel": "Créer ou éditer un Bag",
+        "notFound": "Aucun Bag trouvé"
+      },
+      "created": "Un nouveau Bag a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Bag avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Bag avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Bag {{ id }} ?"
+      },
+      "detail": {
+        "title": "Bag"
+      },
+      "quality": "Quality",
+      "bags": "Bags"
+    }
+  }
+}

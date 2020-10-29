@@ -1,0 +1,25 @@
+{
+  "name": "PurchaseOrder",
+  "fields": [
+    {
+      "fieldName": "desiredQuantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "desiredQuality",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201029111204",
+  "entityTableName": "purchase_order",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,24 @@
+{
+  "jhipstertestApp": {
+    "grain": {
+      "home": {
+        "title": "Grains",
+        "createLabel": "Create a new Grain",
+        "createOrEditLabel": "Create or edit a Grain",
+        "notFound": "No Grains found"
+      },
+      "created": "A new Grain is created with identifier {{ param }}",
+      "updated": "A Grain is updated with identifier {{ param }}",
+      "deleted": "A Grain is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Grain {{ id }}?"
+      },
+      "detail": {
+        "title": "Grain"
+      },
+      "name": "Name",
+      "contentType": "Content Type",
+      "name": "Name"
+    }
+  }
+}

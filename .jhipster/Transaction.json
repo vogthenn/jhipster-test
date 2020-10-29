@@ -1,0 +1,16 @@
+{
+  "name": "Transaction",
+  "fields": [],
+  "relationships": [],
+  "changelogDate": "20201029111304",
+  "entityTableName": "transaction",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

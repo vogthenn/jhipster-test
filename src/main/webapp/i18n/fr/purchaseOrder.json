@@ -1,0 +1,23 @@
+{
+  "jhipstertestApp": {
+    "purchaseOrder": {
+      "home": {
+        "title": "PurchaseOrders",
+        "createLabel": "Créer un nouveau Purchase Order",
+        "createOrEditLabel": "Créer ou éditer un Purchase Order",
+        "notFound": "Aucun Purchase Order trouvé"
+      },
+      "created": "Un nouveau Purchase Order a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Purchase Order avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Purchase Order avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Purchase Order {{ id }} ?"
+      },
+      "detail": {
+        "title": "Purchase Order"
+      },
+      "desiredQuantity": "Desired Quantity",
+      "desiredQuality": "Desired Quality"
+    }
+  }
+}
