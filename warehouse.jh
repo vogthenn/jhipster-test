@@ -1,0 +1,123 @@
+
+entity Region {
+	regionName String
+}
+
+entity Country {
+	countryName String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String,
+    coordinates String
+}
+
+entity Warehouse {
+    bagCapacity Long,
+    name String
+}
+
+
+/**
+ * The Person entity.
+ */
+entity Person {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long,
+}
+
+entity PurchaseOrder {
+	desiredQuantity Long,
+    desiredQuality String, 
+}
+
+entity Transaction {
+}
+
+entity Bag {
+	id String,
+    quality QualityGrade,
+}
+
+entity Grain {
+	name String
+}
+
+enum QualityGrade{
+	GOOD, OK, SOSO, BAD
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+relationship OneToOne {
+	Country{region} to Region
+}
+
+relationship OneToOne {
+	Grain{contentType} to Bag
+}
+
+relationship OneToOne {
+	Location{country} to Country
+}
+
+relationship OneToOne {
+	Location to Person
+}
+
+// relationship ManyToMany {
+//	Job{task(title)} to Task{job}
+// }
+
+relationship OneToOne {
+	Location{location} to Person
+}
+
+relationship OneToOne {
+	Warehouse{location} to Location
+}
+
+relationship OneToOne {
+	Location{location} to Transaction
+}
+
+relationship ManyToOne {
+	Bag{bags} to Transaction
+}
+
+relationship OneToOne {
+	Location{location} to PurchaseOrder
+}
+
+relationship OneToOne {
+	Grain{name} to Bag 
+}
+
+
+// Set pagination options
+paginate Transaction, Person with infinite-scroll
+//paginate Job with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Person
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

@@ -1,0 +1,11 @@
+{
+  "jhipstertestApp": {
+    "QualityGrade": {
+      "null": "",
+      "GOOD": "GOOD",
+      "OK": "OK",
+      "SOSO": "SOSO",
+      "BAD": "BAD"
+    }
+  }
+}

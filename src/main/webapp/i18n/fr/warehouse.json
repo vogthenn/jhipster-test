@@ -1,0 +1,24 @@
+{
+  "jhipstertestApp": {
+    "warehouse": {
+      "home": {
+        "title": "Warehouses",
+        "createLabel": "Créer un nouveau Warehouse",
+        "createOrEditLabel": "Créer ou éditer un Warehouse",
+        "notFound": "Aucun Warehouse trouvé"
+      },
+      "created": "Un nouveau Warehouse a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Warehouse avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Warehouse avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Warehouse {{ id }} ?"
+      },
+      "detail": {
+        "title": "Warehouse"
+      },
+      "bagCapacity": "Bag Capacity",
+      "name": "Name",
+      "location": "Location"
+    }
+  }
+}
