@@ -123,6 +123,9 @@ export const Person = (props: IPersonProps) => {
                   <th className="hand" onClick={sort('commissionPct')}>
                     <Translate contentKey="jhipstertestApp.person.commissionPct">Commission Pct</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
+                  <th>
+                    <Translate contentKey="jhipstertestApp.person.location">Location</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
                   <th />
                 </tr>
               </thead>
@@ -141,6 +144,7 @@ export const Person = (props: IPersonProps) => {
                     <td>{person.hireDate ? <TextFormat type="date" value={person.hireDate} format={APP_DATE_FORMAT} /> : null}</td>
                     <td>{person.salary}</td>
                     <td>{person.commissionPct}</td>
+                    <td>{person.location ? <Link to={`location/${person.location.id}`}>{person.location.id}</Link> : ''}</td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${person.id}`} color="info" size="sm">

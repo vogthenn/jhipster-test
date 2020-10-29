@@ -22,10 +22,7 @@
       "stateProvince": "State Province",
       "coordinates": "Coordinates",
       "country": "Country",
-      "person": "Person",
-      "location": "Location",
-      "location": "Location",
-      "location": "Location"
+      "person": "Person"
     }
   }
 }

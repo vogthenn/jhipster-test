@@ -52,6 +52,10 @@ public class Person implements Serializable {
     @Column(name = "commission_pct")
     private Long commissionPct;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Location location;
+
     @OneToOne(mappedBy = "person")
     @JsonIgnore
     private Location location;
@@ -154,6 +158,19 @@ public class Person implements Serializable {
 
     public void setCommissionPct(Long commissionPct) {
         this.commissionPct = commissionPct;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public Person location(Location location) {
+        this.location = location;
+        return this;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public Location getLocation() {

@@ -14,6 +14,7 @@ export default class PersonUpdatePage {
   hireDateInput: ElementFinder = element(by.css('input#person-hireDate'));
   salaryInput: ElementFinder = element(by.css('input#person-salary'));
   commissionPctInput: ElementFinder = element(by.css('input#person-commissionPct'));
+  locationSelect: ElementFinder = element(by.css('select#person-location'));
 
   getPageTitle() {
     return this.pageTitle;
@@ -75,6 +76,22 @@ export default class PersonUpdatePage {
     return this.commissionPctInput.getAttribute('value');
   }
 
+  async locationSelectLastOption() {
+    await this.locationSelect.all(by.tagName('option')).last().click();
+  }
+
+  async locationSelectOption(option) {
+    await this.locationSelect.sendKeys(option);
+  }
+
+  getLocationSelect() {
+    return this.locationSelect;
+  }
+
+  async getLocationSelectedOption() {
+    return this.locationSelect.element(by.css('option:checked')).getText();
+  }
+
   async save() {
     await this.saveButton.click();
   }
@@ -109,6 +126,7 @@ export default class PersonUpdatePage {
     await waitUntilDisplayed(this.saveButton);
     await this.setCommissionPctInput('5');
     expect(await this.getCommissionPctInput()).to.eq('5');
+    await this.locationSelectLastOption();
     await this.save();
     await waitUntilHidden(this.saveButton);
     expect(await isVisible(this.saveButton)).to.be.false;

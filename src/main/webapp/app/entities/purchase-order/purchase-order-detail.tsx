@@ -37,6 +37,10 @@ export const PurchaseOrderDetail = (props: IPurchaseOrderDetailProps) => {
             </span>
           </dt>
           <dd>{purchaseOrderEntity.desiredQuality}</dd>
+          <dt>
+            <Translate contentKey="jhipstertestApp.purchaseOrder.location">Location</Translate>
+          </dt>
+          <dd>{purchaseOrderEntity.location ? purchaseOrderEntity.location.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/purchase-order" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

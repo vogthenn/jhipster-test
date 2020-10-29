@@ -11,10 +11,6 @@ import { ICountry } from 'app/shared/model/country.model';
 import { getEntities as getCountries } from 'app/entities/country/country.reducer';
 import { IPerson } from 'app/shared/model/person.model';
 import { getEntities as getPeople } from 'app/entities/person/person.reducer';
-import { ITransaction } from 'app/shared/model/transaction.model';
-import { getEntities as getTransactions } from 'app/entities/transaction/transaction.reducer';
-import { IPurchaseOrder } from 'app/shared/model/purchase-order.model';
-import { getEntities as getPurchaseOrders } from 'app/entities/purchase-order/purchase-order.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './location.reducer';
 import { ILocation } from 'app/shared/model/location.model';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
@@ -25,12 +21,9 @@ export interface ILocationUpdateProps extends StateProps, DispatchProps, RouteCo
 export const LocationUpdate = (props: ILocationUpdateProps) => {
   const [countryId, setCountryId] = useState('0');
   const [personId, setPersonId] = useState('0');
-  const [locationId, setLocationId] = useState('0');
-  const [locationId, setLocationId] = useState('0');
-  const [locationId, setLocationId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { locationEntity, countries, people, transactions, purchaseOrders, loading, updating } = props;
+  const { locationEntity, countries, people, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/location');
@@ -45,8 +38,6 @@ export const LocationUpdate = (props: ILocationUpdateProps) => {
 
     props.getCountries();
     props.getPeople();
-    props.getTransactions();
-    props.getPurchaseOrders();
   }, []);
 
   useEffect(() => {
@@ -153,51 +144,6 @@ export const LocationUpdate = (props: ILocationUpdateProps) => {
                     : null}
                 </AvInput>
               </AvGroup>
-              <AvGroup>
-                <Label for="location-location">
-                  <Translate contentKey="jhipstertestApp.location.location">Location</Translate>
-                </Label>
-                <AvInput id="location-location" type="select" className="form-control" name="location.id">
-                  <option value="" key="0" />
-                  {people
-                    ? people.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
-                <Label for="location-location">
-                  <Translate contentKey="jhipstertestApp.location.location">Location</Translate>
-                </Label>
-                <AvInput id="location-location" type="select" className="form-control" name="location.id">
-                  <option value="" key="0" />
-                  {transactions
-                    ? transactions.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
-                <Label for="location-location">
-                  <Translate contentKey="jhipstertestApp.location.location">Location</Translate>
-                </Label>
-                <AvInput id="location-location" type="select" className="form-control" name="location.id">
-                  <option value="" key="0" />
-                  {purchaseOrders
-                    ? purchaseOrders.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
               <Button tag={Link} id="cancel-save" to="/location" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
@@ -222,8 +168,6 @@ export const LocationUpdate = (props: ILocationUpdateProps) => {
 const mapStateToProps = (storeState: IRootState) => ({
   countries: storeState.country.entities,
   people: storeState.person.entities,
-  transactions: storeState.transaction.entities,
-  purchaseOrders: storeState.purchaseOrder.entities,
   locationEntity: storeState.location.entity,
   loading: storeState.location.loading,
   updating: storeState.location.updating,
@@ -233,8 +177,6 @@ const mapStateToProps = (storeState: IRootState) => ({
 const mapDispatchToProps = {
   getCountries,
   getPeople,
-  getTransactions,
-  getPurchaseOrders,
   getEntity,
   updateEntity,
   createEntity,

@@ -47,18 +47,6 @@ public class Location implements Serializable {
     @JoinColumn(unique = true)
     private Person person;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Person location;
-
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Transaction location;
-
-    @OneToOne
-    @JoinColumn(unique = true)
-    private PurchaseOrder location;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -157,45 +145,6 @@ public class Location implements Serializable {
 
     public void setPerson(Person person) {
         this.person = person;
-    }
-
-    public Person getLocation() {
-        return location;
-    }
-
-    public Location location(Person person) {
-        this.location = person;
-        return this;
-    }
-
-    public void setLocation(Person person) {
-        this.location = person;
-    }
-
-    public Transaction getLocation() {
-        return location;
-    }
-
-    public Location location(Transaction transaction) {
-        this.location = transaction;
-        return this;
-    }
-
-    public void setLocation(Transaction transaction) {
-        this.location = transaction;
-    }
-
-    public PurchaseOrder getLocation() {
-        return location;
-    }
-
-    public Location location(PurchaseOrder purchaseOrder) {
-        this.location = purchaseOrder;
-        return this;
-    }
-
-    public void setLocation(PurchaseOrder purchaseOrder) {
-        this.location = purchaseOrder;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

@@ -20,23 +20,5 @@
                                  referencedColumnNames="id"
                                  referencedTableName="person"/>
 
-        <addForeignKeyConstraint baseColumnNames="location_id"
-                                 baseTableName="location"
-                                 constraintName="fk_location_location_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="person"/>
-
-        <addForeignKeyConstraint baseColumnNames="location_id"
-                                 baseTableName="location"
-                                 constraintName="fk_location_location_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="transaction"/>
-
-        <addForeignKeyConstraint baseColumnNames="location_id"
-                                 baseTableName="location"
-                                 constraintName="fk_location_location_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="purchase_order"/>
-
     </changeSet>
 </databaseChangeLog>

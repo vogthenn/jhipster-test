@@ -38,30 +38,6 @@
       "relationshipName": "person",
       "otherEntityField": "id",
       "ownerSide": true
-    },
-    {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "person",
-      "otherEntityRelationshipName": "location",
-      "relationshipName": "location",
-      "otherEntityField": "id",
-      "ownerSide": true
-    },
-    {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "transaction",
-      "otherEntityRelationshipName": "location",
-      "relationshipName": "location",
-      "otherEntityField": "id",
-      "ownerSide": true
-    },
-    {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "purchaseOrder",
-      "otherEntityRelationshipName": "location",
-      "relationshipName": "location",
-      "otherEntityField": "id",
-      "ownerSide": true
     }
   ],
   "changelogDate": "20201029110904",

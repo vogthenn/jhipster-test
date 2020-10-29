@@ -7,6 +7,8 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
+import { ILocation } from 'app/shared/model/location.model';
+import { getEntities as getLocations } from 'app/entities/location/location.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './transaction.reducer';
 import { ITransaction } from 'app/shared/model/transaction.model';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
@@ -15,9 +17,10 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface ITransactionUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const TransactionUpdate = (props: ITransactionUpdateProps) => {
+  const [locationId, setLocationId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { transactionEntity, loading, updating } = props;
+  const { transactionEntity, locations, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/transaction');
@@ -27,6 +30,8 @@ export const TransactionUpdate = (props: ITransactionUpdateProps) => {
     if (!isNew) {
       props.getEntity(props.match.params.id);
     }
+
+    props.getLocations();
   }, []);
 
   useEffect(() => {
@@ -73,6 +78,21 @@ export const TransactionUpdate = (props: ITransactionUpdateProps) => {
                   <AvInput id="transaction-id" type="text" className="form-control" name="id" required readOnly />
                 </AvGroup>
               ) : null}
+              <AvGroup>
+                <Label for="transaction-location">
+                  <Translate contentKey="jhipstertestApp.transaction.location">Location</Translate>
+                </Label>
+                <AvInput id="transaction-location" type="select" className="form-control" name="location.id">
+                  <option value="" key="0" />
+                  {locations
+                    ? locations.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.id}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
+              </AvGroup>
               <Button tag={Link} id="cancel-save" to="/transaction" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
@@ -95,6 +115,7 @@ export const TransactionUpdate = (props: ITransactionUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
+  locations: storeState.location.entities,
   transactionEntity: storeState.transaction.entity,
   loading: storeState.transaction.loading,
   updating: storeState.transaction.updating,
@@ -102,6 +123,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
+  getLocations,
   getEntity,
   updateEntity,
   createEntity,

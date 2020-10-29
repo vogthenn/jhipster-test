@@ -37,6 +37,14 @@
       "otherEntityName": "location",
       "otherEntityRelationshipName": "person",
       "relationshipName": "location",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "location",
       "ownerSide": false
     }
   ],

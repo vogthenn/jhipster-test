@@ -10,7 +10,16 @@
       "fieldType": "String"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "purchaseOrder",
+      "relationshipName": "location",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
   "changelogDate": "20201029111204",
   "entityTableName": "purchase_order",
   "dto": "no",

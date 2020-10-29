@@ -28,6 +28,10 @@ public class PurchaseOrder implements Serializable {
     @Column(name = "desired_quality")
     private String desiredQuality;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Location location;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -61,6 +65,19 @@ public class PurchaseOrder implements Serializable {
 
     public void setDesiredQuality(String desiredQuality) {
         this.desiredQuality = desiredQuality;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public PurchaseOrder location(Location location) {
+        this.location = location;
+        return this;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

@@ -63,18 +63,6 @@ export const LocationDetail = (props: ILocationDetailProps) => {
             <Translate contentKey="jhipstertestApp.location.person">Person</Translate>
           </dt>
           <dd>{locationEntity.person ? locationEntity.person.id : ''}</dd>
-          <dt>
-            <Translate contentKey="jhipstertestApp.location.location">Location</Translate>
-          </dt>
-          <dd>{locationEntity.location ? locationEntity.location.id : ''}</dd>
-          <dt>
-            <Translate contentKey="jhipstertestApp.location.location">Location</Translate>
-          </dt>
-          <dd>{locationEntity.location ? locationEntity.location.id : ''}</dd>
-          <dt>
-            <Translate contentKey="jhipstertestApp.location.location">Location</Translate>
-          </dt>
-          <dd>{locationEntity.location ? locationEntity.location.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/location" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -17,7 +17,8 @@
         "title": "Purchase Order"
       },
       "desiredQuantity": "Desired Quantity",
-      "desiredQuality": "Desired Quality"
+      "desiredQuality": "Desired Quality",
+      "location": "Location"
     }
   }
 }
