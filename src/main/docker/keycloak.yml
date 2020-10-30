@@ -17,7 +17,7 @@ services:
       - ./realm-config:/opt/jboss/keycloak/realm-config
     environment:
       - KEYCLOAK_USER=admin
-      - KEYCLOAK_PASSWORD=y$1{pf&~I<QspZdhektm
+      - KEYCLOAK_PASSWORD=admin
       - DB_VENDOR=h2
     ports:
       - 9080:9080
