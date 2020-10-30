@@ -39,6 +39,10 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
   devServer: {
     stats: options.stats,
     hot: true,
+    // allowedHosts: [
+      // "hvogt-dev.northeurope.cloudapp.azure.com",
+      // "localhost"
+    // ],
     contentBase: './target/classes/static/',
     proxy: [{
       context: [
